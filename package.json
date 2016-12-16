@@ -1,0 +1,21 @@
+{
+  "name": "webpack-tsc-react",
+  "version": "0.0.1",
+  "description": "Repo for studing Webpack with React and TS",
+<<<<<<< 158ec76189c6b0cd1c493e3dae346b2d5f96ce4e
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+=======
+  "main": "src/entry.js",
+  "scripts": {},
+>>>>>>> First static example
+  "author": "DarthVictor",
+  "license": "MIT",
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1"
+  },
+  "dependencies": {}
+}
