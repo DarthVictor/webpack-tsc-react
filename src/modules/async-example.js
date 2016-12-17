@@ -1,5 +1,5 @@
-export default async function asyncFetch(){
-    const response = await window.fetch('https://jsonplaceholder.typicode.com/posts/1') 
+export default async function getPost(postId){
+    const response = await window.fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`) 
     const json = await response.json()
     return json
 }

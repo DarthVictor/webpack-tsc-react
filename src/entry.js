@@ -1,10 +1,14 @@
 import 'whatwg-fetch'
-import asyncFetch from './modules/async-example.js'
+import getPost from './modules/async-example.js'
+import getUser from './modules/async-ts-example.ts'
 
 require('./styles/entry-style.css')
 
 async function run(){    
-    return await asyncFetch()
+    const post = await getPost(1)
+    const user = await getUser(post.userId)
+    post.user = user
+    return post
 }
 
 run().then((res) => {

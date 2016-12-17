@@ -7,16 +7,27 @@ module.exports = {
         filename: 'bundle.js'
     },
     watch: true,
+    resolve: {
+        /* 
+        Add '.ts' as resolvable extension.
+         Without this line you will have problems like this        
+         'Module not found: Error: Cannot resolve 'file' or 'directory' ./MyComponent in \src\components'
+         then importing files without extensions, for example using ./MyComponent instead ./MyComponent.tsx
+         */
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+    },
+    devtool: 'source-map',
     module: {
         loaders: [            
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'babel',                
-                query: {
-                    presets: ['es2015'],                    
-                    plugins: ['transform-async-to-generator']
-                }
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.ts$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'ts-loader'
             },
             { 
                 test: /\.css$/, 
