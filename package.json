@@ -2,8 +2,10 @@
   "name": "webpack-tsc-react",
   "version": "0.0.1",
   "description": "Repo for studing Webpack with React and TS",
-  "main": "src/entry.js",
-  "scripts": {},
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "DarthVictor",
   "license": "MIT",
   "devDependencies": {
@@ -13,10 +15,13 @@
     "babel-plugin-transform-async-to-generator": "^6.16.0",
     "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.26.1",
+    "express": "^4.14.0",
     "style-loader": "^0.13.1",
     "ts-loader": "^1.3.3",
     "typescript": "^2.1.4",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.13.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.20.0",

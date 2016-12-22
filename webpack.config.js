@@ -1,10 +1,16 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
-    entry: ['babel-polyfill', './src/entry.js'],
+    entry: [
+         'babel-polyfill', // polyfills
+         'webpack-hot-middleware/client', // hot module entry point         
+         './src/entry.js' //application entry point
+    ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/dist/'
     },
     watch: true,
     resolve: {
@@ -34,5 +40,8 @@ module.exports = {
                 loader: 'style!css' 
             }
         ]
-    }
+    },
+    plugins: [
+            new webpack.HotModuleReplacementPlugin() // provide HMR in bundles
+    ]    
 }

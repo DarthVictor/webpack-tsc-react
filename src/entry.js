@@ -1,6 +1,7 @@
 import 'whatwg-fetch'
 import getPost from './modules/async-example.js'
 import getUser from './modules/async-ts-example.ts'
+module.hot.accept() 
 
 require('./styles/entry-style.css')
 
