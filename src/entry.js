@@ -1,8 +1,9 @@
 import 'whatwg-fetch'
-import getPost from './modules/async-example.js'
-import getUser from './modules/async-ts-example.ts'
-module.hot.accept() 
-
+import  * as React from 'react'
+import  * as ReactDom from 'react-dom'
+import getPost from './modules/async-example'
+import getUser from './modules/async-ts-example'
+import App from './components/App'
 require('./styles/entry-style.css')
 
 async function run(){    
@@ -13,5 +14,9 @@ async function run(){
 }
 
 run().then((res) => {
-    document.querySelector('#main-block').innerHTML  = `<div class="entry-block">${JSON.stringify(res)}</div>`
+    ReactDom.render(
+        <App post={res}/>,
+        document.getElementById('main-block')
+    )
+    //document.querySelector('#main-block').innerHTML  = `<div class="entry-block">${JSON.stringify(res)}</div>`
 })

@@ -20,20 +20,20 @@ module.exports = {
          'Module not found: Error: Cannot resolve 'file' or 'directory' ./MyComponent in \src\components'
          then importing files without extensions, for example using ./MyComponent instead ./MyComponent.tsx
          */
-        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.tsx', '.jsx']
     },
     devtool: 'source-map',
     module: {
         loaders: [            
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader'
+                loaders: ['react-hot', 'babel-loader']
             },
             {
-                test: /\.ts$/,
+                test: /\.tsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'ts-loader'
+                loaders: ['react-hot', 'ts-loader']
             },
             { 
                 test: /\.css$/, 
