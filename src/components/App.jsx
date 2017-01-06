@@ -37,7 +37,7 @@ export default class App extends React.Component {
             )
         }
         else {
-            return <div>Please enaible JS</div> 
+            return <div>Please enable JS</div> 
         }
     }
 }

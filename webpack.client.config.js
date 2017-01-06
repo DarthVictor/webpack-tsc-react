@@ -1,13 +1,9 @@
 const webpack = require('webpack')
-const util = require('util')
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const isDevelopment = NODE_ENV === 'development'
-const path = require('path')
-const rootDir = path.join(__dirname, '..')
-
-
 const configCommon = require('./webpack.common.config')
 const config = Object.assign({}, configCommon)
+
 config.entry = [
     'babel-polyfill', 'whatwg-fetch',// polyfills
     'webpack-hot-middleware/client', // hot module entry point         
