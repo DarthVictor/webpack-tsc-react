@@ -5,7 +5,7 @@ const configCommon = require('./webpack.common.config')
 const config = Object.assign({}, configCommon)
 
 config.entry = [
-    'babel-polyfill', 'whatwg-fetch',// polyfills
+    'whatwg-fetch',// polyfills
     './src/serverEntry.js' //application entry point
 ]
 config.output = Object.assign({}, config.output)
