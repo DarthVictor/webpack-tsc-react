@@ -12,8 +12,6 @@ async function run(){
     return post
 }
 
-
-
 export default class App extends React.Component {
     constructor(props) {
         super(props)
@@ -39,7 +37,7 @@ export default class App extends React.Component {
             )
         }
         else {
-            return <div></div> 
+            return <div>Please enaible JS</div> 
         }
     }
 }
