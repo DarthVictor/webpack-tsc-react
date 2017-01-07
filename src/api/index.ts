@@ -1,6 +1,6 @@
 import * as express from 'express'
-import users from './users/index'
-import posts from './posts/index'
+import users from './users'
+import posts from './posts'
 
 const router = express.Router()
 router.use('/users', users)
