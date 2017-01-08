@@ -7,6 +7,7 @@ require('./styles/entry-style.css')
 
 ReactDom.render(
     <Router history={browserHistory}>
+        <Route path="/" component={App}/>
         <Route path="/:id" component={App}/>
     </Router>
     ,
