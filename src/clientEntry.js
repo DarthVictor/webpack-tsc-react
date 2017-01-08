@@ -1,9 +1,14 @@
 import  * as React from 'react'
 import  * as ReactDom from 'react-dom'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
+
 import App from './components/App'
 require('./styles/entry-style.css')
 
 ReactDom.render(
-    <App/>,
+    <Router history={browserHistory}>
+        <Route path="/:id" component={App}/>
+    </Router>
+    ,
     document.getElementById('main-block')
 )

@@ -5,8 +5,10 @@ import Post from './Post'
 
 import getPost from '../modules/get-post'
 import getUser from '../modules/get-user'
-async function run(){    
-    const post = await getPost(1)
+
+
+async function getData(id){    
+    const post = await getPost(id)
     const user = await getUser(post.userId)
     post.user = user
     return post
@@ -20,7 +22,7 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        run().then((res) => {
+        getData(+this.props.params.id || 1).then((res) => {
             this.setState({
                 post: res
             })
@@ -28,6 +30,7 @@ export default class App extends React.Component {
     }
 
     render() {
+        
         if(this.state.post) {
             return ( 
                 <div>

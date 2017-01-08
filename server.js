@@ -43,7 +43,7 @@ compilerServerRender.watch({}, function(err, stats) {
     renderPath = require ('./dist/bundle.server-render').default
 });
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.send(renderPath(req));
 })
 
